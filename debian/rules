@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_build:
+	mkdir -p sbin
+	set -ex && \
+		export CGO_ENABLED=0 && \
+		go build \
+			-mod vendor -buildmode pie -v \
+			-ldflags "-s -w -extldflags '-static -lm'" \
+			-o ./sbin/gosu .
+
+override_dh_auto_install:
+	install -Dpm755 -d debian/tmp/usr/sbin
+	install -Dpm755 -t debian/tmp/usr/sbin sbin/gosu
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@

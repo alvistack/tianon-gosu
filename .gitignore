@@ -1,3 +1,6 @@
 .git
 SHA256SUMS*
+bin
 gosu*
+obj-x86_64-linux-gnu
+vendor

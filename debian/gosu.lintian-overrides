@@ -1,0 +1,6 @@
+gosu: copyright-without-copyright-notice
+gosu: initial-upload-closes-no-bugs
+gosu: no-manual-page
+gosu: shared-library-lacks-prerequisites
+gosu: statically-linked-binary
+gosu: zero-byte-file-in-doc-directory
